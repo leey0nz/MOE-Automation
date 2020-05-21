@@ -50,8 +50,6 @@ namespace CAM
                 return;
             }
             Console.WriteLine("Open tab menu success!!!!");
-
-
         }
     }
 }
