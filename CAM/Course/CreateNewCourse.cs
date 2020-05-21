@@ -19,7 +19,7 @@ namespace CAM
         public void createNewCourse()
         {
             driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
+            //driver.Manage().Window.Maximize();
             verificationErrors = new StringBuilder();
             driver.Navigate().GoToUrl("https://www.development.opal2.conexus.net/app/");
 
@@ -30,9 +30,15 @@ namespace CAM
             Thread.Sleep(2000);
 
             AddCourse addingCourse = new AddCourse(driver);
-            Thread.Sleep(1000);
+            Thread.Sleep(5000);
 
             addingCourse.ClickMenu.ClickTabMenu("//img[@class='icons switch-module']");
+            addingCourse.ClickSubMenu._ClickButton("//li[@aria-label='Course Administration']");
+            Thread.Sleep(2000);
+            addingCourse.ClickButton._ClickButton("//button[@class='k-button-icontext k-button k-primary']");
+            addingCourse.ClickButton._ClickButton("//li[@class='k-item ng-star-inserted k-state-focused']");
+            //addingCourse.ClickButton._ClickButton("//div[@class='opal-file-uploader__upload-content']");
+
             //addingCategoriesPageObject.ClickButton._ClickButton("//div[@class='group-button on-top']//button[@class='btn btn-outline-secondary reset'][contains(text(),'Add')]");
             //addingCategoriesPageObject.EnterTextBox.EnterTexts("//input[@placeholder='Name']", "Testing 1");
             //addingCategoriesPageObject.EnterTextBox.EnterTexts("//input[@placeholder='Description']", "Testing 1");
@@ -40,16 +46,22 @@ namespace CAM
             //addingCategoriesPageObject.EnterTextBox.EnterTexts("//input[@placeholder='Code']", "TT1");
             //addingCategoriesPageObject.ClickButton._ClickButton("//button[contains(text(),'Save')]");
             //driver.Quit();
-            try
-            {
-                driver.FindElement(By.ClassName("modules-switcher"));
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Can not open tab menu !!!\n Reason: " + e);
-                return;
-            }
-            Console.WriteLine("Open tab menu success!!!!");
+            //try
+            //{
+            //    addingCourse.ClickMenu.ClickTabMenu("//img[@class='icons switch-module']");
+            //    addingCourse.ClickSubMenu._ClickButton("//li[@aria-label='Course Administration']");
+            //    Thread.Sleep(1000);
+            //    addingCourse.ClickButton._ClickButton("//button[@class='k-button-icontext k-button k-primary']");
+            //    addingCourse.ClickButton._ClickButton("//li[@class='k-item ng-star-inserted k-state-focused']");
+
+            //    driver.FindElement(By.XPath("//p[@class='toolbar__left-group__title-group__title']"));
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine("Can not open create course site !!!\n Reason: " + e);
+            //    return;
+            //}
+            //Console.WriteLine("Open create course site success!!!!");
         }
     }
 }
