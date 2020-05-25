@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace UI.Common.UI
     {
         private IWebDriver _driver;
         private string v;
+        private string loadingIconXPath = "//div[@class='spinner primary']";
 
         public SelectTabMenu(IWebDriver driver, string v)
         {
@@ -18,18 +20,28 @@ namespace UI.Common.UI
         }
         public void ClickTabMenu(string XPath)
         {
-            var option = _driver.FindElement(By.XPath($"{XPath}"));
-            if (option != null)
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
+            var isLoadingGone = _waitUntilLoadingDissapear();
+            do
             {
-                option.Click();
-                Thread.Sleep(2000);
+                isLoadingGone = _waitUntilLoadingDissapear();
+            } while (isLoadingGone == false);
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath($"{XPath}"))).Click();
+        }
 
-            }
-            else
+        public bool _waitUntilLoadingDissapear()
+        {
+            try
             {
-                throw new Exception("not found TabMenu Element");
+                var option = _driver.FindElement(By.XPath($"{loadingIconXPath}"));
+                Console.WriteLine("0.false");
+                return false;
             }
-
+            catch (NoSuchElementException e)
+            {
+                Console.WriteLine("0.true--------------------------------");
+                return true;
+            }
         }
     }
 }

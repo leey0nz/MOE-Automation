@@ -26,22 +26,18 @@ namespace CAM
             AutoItX3 autoIt = new AutoItX3();
             autoIt.WinActivate("Open"); 
             LoginPage.Login(driver);
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
 
             AddCourse addingCourse = new AddCourse(driver);
-            Thread.Sleep(5000);
+            //Thread.Sleep(5000);
 
             addingCourse.ClickMenu.ClickTabMenu("//img[@class='icons switch-module']");
             addingCourse.ClickSubMenu._ClickButton("//li[@aria-label='Course Administration']");
-            Thread.Sleep(4000);
             addingCourse.ClickButton._ClickButton("//button[@class='k-button-icontext k-button k-primary']");
             addingCourse.ClickButton._ClickButton("//li[@class='k-item ng-star-inserted k-state-focused']");
-            Thread.Sleep(2000);
-            addingCourse.ClickButton._ClickButton("//opal-file-uploader[@class='basic-info-tab__thumbnail-uploader ng-untouched ng-pristine ng-valid ng-star-inserted']");
+            addingCourse.ClickButton._ClickByFindElement("//opal-file-uploader[@class='basic-info-tab__thumbnail-uploader ng-untouched ng-pristine ng-valid ng-star-inserted']");
             autoIt.Send("C:\\Users\\tuan.trinh\\Downloads\\i.jpg");
-            Thread.Sleep(2000);
             autoIt.Send("{ENTER}");
-            Thread.Sleep(2000);
             addingCourse.ClickButton._ClickButton("//button[@class='k-button ng-star-inserted']");
 
             //addingCategoriesPageObject.ClickButton._ClickButton("//div[@class='group-button on-top']//button[@class='btn btn-outline-secondary reset'][contains(text(),'Add')]");
