@@ -18,7 +18,7 @@ namespace UI.Common.UI
         }
 
         public void EnterTexts(string XPath, string text)
-        {
+        { 
             var option = driver.FindElement(By.XPath($"{XPath}"));
             if (option != null)
             {

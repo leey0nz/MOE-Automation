@@ -34,12 +34,10 @@ namespace UI.Common.UI
             try
             {
                 var option = _driver.FindElement(By.XPath($"{loadingIconXPath}"));
-                Console.WriteLine("0.false");
                 return false;
             }
             catch (NoSuchElementException e)
             {
-                Console.WriteLine("0.true--------------------------------");
                 return true;
             }
         }

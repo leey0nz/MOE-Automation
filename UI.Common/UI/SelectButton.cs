@@ -27,17 +27,7 @@ namespace UI.Common.UI
             {
                 isLoadingGone = _waitUntilLoadingDissapear();
             } while (isLoadingGone == false);
-            //wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath($"{XPath}"))).Click();
-            var option = _driver.FindElement(By.XPath($"{XPath}"));
-            if (option != null)
-            {
-                option.Click();
-                Thread.Sleep(1000);
-            }
-            else
-            {
-                throw new NoSuchElementException("not found Element");
-            }
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath($"{XPath}"))).Click();
         }
 
         public void _ClickByFindElement(string XPath)
@@ -50,7 +40,8 @@ namespace UI.Common.UI
             }
             else
             {
-                throw new NoSuchElementException("not found Element");
+                Console.WriteLine("not found Element");
+                return;
             }
         }
         public void _ClickButtonbyCSS(string Css)
@@ -64,7 +55,7 @@ namespace UI.Common.UI
             }
             else
             {
-                throw new Exception("not found Element");
+                Console.WriteLine("not found Element");
             }
 
         }
@@ -74,12 +65,10 @@ namespace UI.Common.UI
             try
             {
                 var option = _driver.FindElement(By.XPath($"{loadingIconXPath}"));
-                Console.WriteLine("2.false");
                 return false;
             }
             catch (NoSuchElementException e)
             {
-                Console.WriteLine("2.true--------------------------------");
                 return true;
             }
         }

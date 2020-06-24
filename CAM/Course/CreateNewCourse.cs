@@ -20,9 +20,10 @@ namespace CAM
         public void createNewCourse()
         {
             driver = new ChromeDriver();
-            //driver.Manage().Window.Maximize();
+            driver.Manage().Window.Maximize();
             verificationErrors = new StringBuilder();
-            driver.Navigate().GoToUrl("https://www.development.opal2.conexus.net/app/");
+            driver.Navigate().GoToUrl("https://www.development.opal2.conexus.net/app/cam");
+
             AutoItX3 autoIt = new AutoItX3();
             autoIt.WinActivate("Open"); 
             LoginPage.Login(driver);
@@ -30,15 +31,20 @@ namespace CAM
 
             AddCourse addingCourse = new AddCourse(driver);
             //Thread.Sleep(5000);
-
-            addingCourse.ClickMenu.ClickTabMenu("//img[@class='icons switch-module']");
-            addingCourse.ClickSubMenu._ClickButton("//li[@aria-label='Course Administration']");
+            addingCourse.ClickButton._ClickByFindElement("//button[contains(text(),'Proceed')]");
+            //addingCourse.ClickMenu.ClickTabMenu("//img[@class='icons switch-module']");
+            //addingCourse.ClickSubMenu._ClickButton("//li[@aria-label='Course Administration']");
+            addingCourse.ClickMenu.ClickTabMenu("//span[contains(text(),'Course Administration')]");
             addingCourse.ClickButton._ClickButton("//button[@class='k-button-icontext k-button k-primary']");
             addingCourse.ClickButton._ClickButton("//li[@class='k-item ng-star-inserted k-state-focused']");
-            addingCourse.ClickButton._ClickByFindElement("//opal-file-uploader[@class='basic-info-tab__thumbnail-uploader ng-untouched ng-pristine ng-valid ng-star-inserted']");
+            addingCourse.ClickButton._ClickByFindElement("//div[@class='opal-file-uploader__drop-file-area column align-center-center -show']");
             autoIt.Send("C:\\Users\\tuan.trinh\\Downloads\\i.jpg");
             autoIt.Send("{ENTER}");
             addingCourse.ClickButton._ClickButton("//button[@class='k-button ng-star-inserted']");
+            addingCourse.EnterTextBox.EnterTexts("//input[@class='form-control ng-pristine ng-invalid ng-star-inserted ng-touched']", "Basketball 01");
+            addingCourse.ClickButton._ClickButton("//basic-info-tab//div[3]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            addingCourse.ClickButton._ClickButton("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'Course')]");
+            addingCourse.EnterTextBox.EnterTexts("//input[@id='k-109288d3-717a-4cc6-b9f2-67d75db0ad6b']","10");
 
             //addingCategoriesPageObject.ClickButton._ClickButton("//div[@class='group-button on-top']//button[@class='btn btn-outline-secondary reset'][contains(text(),'Add')]");
             //addingCategoriesPageObject.EnterTextBox.EnterTexts("//input[@placeholder='Name']", "Testing 1");
