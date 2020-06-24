@@ -42,7 +42,8 @@ namespace CAM
             autoIt.Send("{ENTER}");
             addingCourse.ClickButton._ClickButton("//button[@class='k-button ng-star-inserted']");
             addingCourse.EnterTextBox.EnterTexts("//input[@class='form-control ng-pristine ng-invalid ng-star-inserted ng-touched']", "Basketball 01");
-            addingCourse.ClickButton._ClickButton("//basic-info-tab//div[3]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            addingCourse.ClickMenu.ClickTabMenu("//label[contains(text(),'Type of PD Activity')]");
+            addingCourse.ClickButton._ClickButton("//body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div[@id='k-tabstrip-tabpanel-0']/detail-content-fragment/div/div/detail-content-right/div/div/basic-info-tab/form/div/div[3]/editable[1]/opal-select[1]/ng-select[1]/div[1]/span[1]");
             addingCourse.ClickButton._ClickButton("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'Course')]");
             addingCourse.EnterTextBox.EnterTexts("//input[@id='k-109288d3-717a-4cc6-b9f2-67d75db0ad6b']","10");
 
