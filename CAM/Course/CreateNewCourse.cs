@@ -49,12 +49,18 @@ namespace CAM
             //autoIt.Send("10");
             autoIt.Send("{TAB}, 10");//Duration (Minutes)
             //autoIt.Send("10");
-            autoIt.Send("{TAB},{ENTER}, MOE Mandatory, {TAB},");
+            autoIt.Send("{TAB},{ENTER}");
             autoIt.Send("MOE Mandatory");//Categories
             autoIt.Send("{TAB}, {TAB}, {ENTER}");
             autoIt.Send("E-Learning");// Mode of Learner
             autoIt.Send("{ENTER}, {TAB}");
             addingCourse.EnterTextBox.EnterTexts("//basic-info-tab//div[8]//editable[1]//input[1]","Of001");
+            addingCourse.ClickButton._ClickButton("//div[10]//editable[1]//textarea[1]");
+            autoIt.Send("Testing1");
+            addingCourse.EnterTextBox.EnterTexts("//div[11]//editable[1]//textarea[1]", "Testing2");
+            addingCourse.ClickButton._ClickButton("//label[@class='k-checkbox-label'][contains(text(),'MOE')]");
+            addingCourse.ClickButton._ClickButton("//provider-info-tab//input[@class='form-control ng-untouched ng-pristine ng-invalid ng-star-inserted']");
+            addingCourse.ClickButton._ClickButton("//span[contains(text(),'Directorate')]");
             //addingCourse.ClickMenu.ClickTabMenu("//label[contains(text(),'Type of PD Activity')]");
             //addingCourse.ClickButton._ClickButton("//ng-select[@class='opal-select ng-select ng-select-single ng-select-searchable ng-pristine ng-valid ng-select-bottom ng-touched']//div[@class='ng-select-container']");
             //addingCourse.ClickButton._ClickButton("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'Course')]");
