@@ -42,10 +42,23 @@ namespace CAM
             autoIt.Send("{ENTER}");
             addingCourse.ClickButton._ClickButton("//button[@class='k-button ng-star-inserted']");
             addingCourse.EnterTextBox.EnterTexts("//input[@class='form-control ng-pristine ng-invalid ng-star-inserted ng-touched']", "Basketball 01");
-            addingCourse.ClickMenu.ClickTabMenu("//label[contains(text(),'Type of PD Activity')]");
-            addingCourse.ClickButton._ClickButton("//body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div[@id='k-tabstrip-tabpanel-0']/detail-content-fragment/div/div/detail-content-right/div/div/basic-info-tab/form/div/div[3]/editable[1]/opal-select[1]/ng-select[1]/div[1]/span[1]");
-            addingCourse.ClickButton._ClickButton("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'Course')]");
-            addingCourse.EnterTextBox.EnterTexts("//input[@id='k-109288d3-717a-4cc6-b9f2-67d75db0ad6b']","10");
+            autoIt.Send("{TAB}, {ENTER}, Course/ Workshop");
+            //autoIt.Send("Course/ Workshop"); //Type
+            autoIt.Send("{ENTER}, {TAB}, 10");//Duration (Hours)
+            //autoIt.Send("{TAB}");
+            //autoIt.Send("10");
+            autoIt.Send("{TAB}, 10");//Duration (Minutes)
+            //autoIt.Send("10");
+            autoIt.Send("{TAB},{ENTER}, MOE Mandatory, {TAB},");
+            autoIt.Send("MOE Mandatory");//Categories
+            autoIt.Send("{TAB}, {TAB}, {ENTER}");
+            autoIt.Send("E-Learning");// Mode of Learner
+            autoIt.Send("{ENTER}, {TAB}");
+            addingCourse.EnterTextBox.EnterTexts("//basic-info-tab//div[8]//editable[1]//input[1]","Of001");
+            //addingCourse.ClickMenu.ClickTabMenu("//label[contains(text(),'Type of PD Activity')]");
+            //addingCourse.ClickButton._ClickButton("//ng-select[@class='opal-select ng-select ng-select-single ng-select-searchable ng-pristine ng-valid ng-select-bottom ng-touched']//div[@class='ng-select-container']");
+            //addingCourse.ClickButton._ClickButton("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'Course')]");
+            //addingCourse.EnterTextBox.EnterTexts("//kendo-numerictextbox[@class='form-control k-widget k-numerictextbox ng-pristine ng-invalid ng-star-inserted ng-touched']//input[@class='k-input k-formatted-value']", "10");
 
             //addingCategoriesPageObject.ClickButton._ClickButton("//div[@class='group-button on-top']//button[@class='btn btn-outline-secondary reset'][contains(text(),'Add')]");
             //addingCategoriesPageObject.EnterTextBox.EnterTexts("//input[@placeholder='Name']", "Testing 1");

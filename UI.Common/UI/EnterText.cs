@@ -30,5 +30,10 @@ namespace UI.Common.UI
                 throw new Exception("not found Textbox Element");
             }
         }
+
+        public void EnterHotKeys(string tab)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
