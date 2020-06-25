@@ -22,12 +22,21 @@ namespace UI.Common.UI
         public void _ClickButton(string XPath)
         {
             WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
+            //var isLoadingGone = _waitUntilLoadingDissapear();
+            //do
+            //{
+            //    isLoadingGone = _waitUntilLoadingDissapear();
+            //} while (isLoadingGone == false);
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath($"{XPath}"))).Click();
+        }
+
+        public void _CheckSpinner()
+        {
             var isLoadingGone = _waitUntilLoadingDissapear();
             do
             {
                 isLoadingGone = _waitUntilLoadingDissapear();
             } while (isLoadingGone == false);
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath($"{XPath}"))).Click();
         }
 
         public void _ClickByFindElement(string XPath)

@@ -23,7 +23,6 @@ namespace UI.Common.UI
             if (option != null)
             {
                 option.SendKeys(text);
-                //Thread.Sleep(1000);
             }
             else
             {                
