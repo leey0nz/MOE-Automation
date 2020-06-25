@@ -87,8 +87,159 @@ namespace CAM
 
             // Owner Division/ Academy
             addingCourse.ClickButton._ClickButton("//provider-info-tab//div//div[1]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("Division 37"); 
+            autoIt.Send("{TAB}");
 
-            //Image
+            // Owner Branch/ Unit
+            Thread.Sleep(1000);
+            addingCourse.ClickButton._ClickButton("//provider-info-tab//div[2]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("Branch 37");
+            autoIt.Send("{TAB}");
+
+            // Phone MOE Officer (Owner Division)
+            addingCourse.ClickButton._ClickButton("//provider-info-tab//div[5]//editable[1]//input[1]");
+            autoIt.Send("0123456789");
+
+            // Notional Cost
+            addingCourse.ClickButton._ClickButton("//div[7]//editable[1]//kendo-numerictextbox[1]//span[1]//input[1]");
+            autoIt.Send("1000");
+
+            // Course Fee
+            addingCourse.ClickButton._ClickButton("//div[8]//editable[1]//kendo-numerictextbox[1]//span[1]//input[1]");
+            autoIt.Send("10");
+
+            //// --Metadata--
+            // Service Scheme
+            addingCourse.ClickButton._ClickButton("//metadata-tab//div//div[1]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("Executive and Administrative Staff");
+
+            // Subject
+            addingCourse.ClickButton._ClickButton("//body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div/detail-content-right/div/div/metadata-tab/form/div/div[2]/editable[1]/opal-select[1]/ng-select[1]/div[1]");
+            autoIt.Send("Corporate Services");
+
+            // PD Area/ Theme
+            addingCourse.ClickButton._ClickButton("//body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div/detail-content-right/div/div/metadata-tab/form/div[1]");
+            autoIt.Send("Corporate Services");
+
+            // Learning Framework
+            addingCourse.ClickButton._ClickButton("//metadata-tab//div[4]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("HQ EAS Core (MX14 and above)");
+
+            // Learning Dimension
+            addingCourse.ClickButton._ClickButton("//metadata-tab//div[5]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("Collaboration and Engagement");
+
+            // Learning Area
+            addingCourse.ClickButton._ClickButton("//metadata-tab//div[6]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("Collaboration and Engagement");
+
+            // Course Level
+            addingCourse.ClickButton._ClickButton("//metadata-tab//div[8]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("Leading");
+
+            //// --Copyright--
+            // Copyright Owner
+            addingCourse.ClickButton._ClickButton("//copyright-tab//div[2]//div[1]//editable[1]//input[1]");
+            autoIt.Send("Testing 3");
+
+            //// --Target Audience--
+            // Place of Work
+            addingCourse.ClickButton._ClickButton("//label[contains(text(),'Applicable for users in specific organisation(s)')]");//Organisation
+
+            // Division
+            addingCourse.ClickButton._ClickButton("//body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div/detail-content-right/div/div/target-audience-tab/form/div/div[4]/editable[1]/opal-select[1]/ng-select[1]/div[1]/div[1]/div[2]/input[1]");
+            autoIt.Send("Division 37");
+            autoIt.Send("{TAB}");
+
+            // Branch
+            addingCourse.ClickButton._ClickButton("//body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div/detail-content-right/div/div/target-audience-tab/form/div/div[5]/editable[1]/opal-select[1]/ng-select[1]/div[1]/div[1]/div[2]/input[1]");
+            autoIt.Send("Branch 37");
+            autoIt.Send("{TAB}");
+
+            //// --User Profile--
+            // Track
+            addingCourse.ClickButton._ClickButton("//target-audience-tab//div//div[1]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("MOE HQ");
+            autoIt.Send("{TAB}");
+
+            // Developmental Role
+            addingCourse.ClickButton._ClickButton("//target-audience-tab//div//div//div[2]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("Director");
+            autoIt.Send("{TAB}");
+
+            // Job Family
+            addingCourse.ClickButton._ClickButton("//target-audience-tab//div[5]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("Citizen Engagement");
+            autoIt.Send("{TAB}");
+
+            // EAS Substantive Grade Banding
+            addingCourse.ClickButton._ClickButton("//div//div//div//div//div//div//div//div//div//div//div//div//div//div[8]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("HQ EAS Core (MX14 and above)");
+            autoIt.Send("{TAB}");
+
+            //// --Course Planning--
+            // Nature of Course
+            addingCourse.ClickButton._ClickButton("//course-planning-tab//div//div[1]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("Full-time");
+            autoIt.Send("{TAB}");
+
+            // Number of Classes Planned
+            addingCourse.ClickButton._ClickButton("//course-planning-tab//div[3]//editable[1]//kendo-numerictextbox[1]//span[1]//input[1]");
+            autoIt.Send("10");
+
+            // Number of Sessions Per Class
+            addingCourse.ClickButton._ClickButton("//course-planning-tab//div[4]//editable[1]//kendo-numerictextbox[1]//span[1]//input[1]");
+            autoIt.Send("10");
+
+            // Number of Hours Per Session
+            addingCourse.ClickButton._ClickButton("//div//div//div//div//div//div//div//div//div//div//div//div[5]//editable[1]//kendo-numerictextbox[1]//span[1]//input[1]");
+            autoIt.Send("10");
+
+
+            // Date & Time Publish Course
+            addingCourse.ClickButton._ClickButton("//div[7]//editable[1]//kendo-datepicker[1]//span[1]//kendo-dateinput[1]//span[1]//input[1]");
+            autoIt.Send("250620");
+
+            // Date & Time to Archive Course
+            addingCourse.ClickButton._ClickButton("//div[8]//editable[1]//kendo-datepicker[1]//span[1]//kendo-dateinput[1]//span[1]//input[1]");
+            autoIt.Send("250720");
+
+            // Period of PD Activity
+            addingCourse.ClickButton._ClickButton("//course-planning-tab//div[2]//input[1]");
+            autoIt.Send("Term 1");
+
+            // Minimum Participants Per Class
+            addingCourse.ClickButton._ClickButton("//div[10]//editable[1]//kendo-numerictextbox[1]//span[1]//input[1]");
+            autoIt.Send("10");
+
+            // Maximum Participants Per Class
+            addingCourse.ClickButton._ClickButton("//div[11]//editable[1]//kendo-numerictextbox[1]//span[1]//input[1]");
+            autoIt.Send("30");
+
+            //// --Evaluation & E-Certificate
+            // Post Course Evaluation Form
+            addingCourse.ClickButton._ClickButton("//evaluation-ecertificate-tab//div//div[1]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("Basketball - Post Survey by Urek");
+
+            //// --Course Administration--
+            // Course Administrator(1st)
+            addingCourse.ClickButton._ClickButton("//body//div//div//div//div//div//div//div//div//div//div//div//div//div[1]//div[1]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("urek-sa-01");
+            autoIt.Send("{TAB}");
+
+            // Primary Approving Officer
+            addingCourse.ClickButton._ClickButton("//div//div//div//div//div//div//div//div//div//div//div//div[2]//div[1]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("urek-sa-01");
+            autoIt.Send("{TAB}");
+
+            // Course Facilitator
+            addingCourse.ClickButton._ClickButton("//course-administration-tab//div[3]//div[1]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
+            autoIt.Send("urek-cf-01");
+            autoIt.Send("{TAB}");
+
+
+
+            //Thumbnail
             //addingCourse.ClickButton._ClickByFindElement("//div[@class='opal-file-uploader__drop-file-area column align-center-center -show']");
             //autoIt.Send("C:\\Users\\tuan.trinh\\Downloads\\i.jpg");
             //autoIt.Send("{ENTER}");
