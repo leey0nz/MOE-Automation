@@ -36,7 +36,7 @@ namespace CAM
 
             // Tab Menu
             addingCourse.ClickMenu.ClickTabMenu("//span[contains(text(),'Course Administration')]");
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
 
             // Create Course btn
             addingCourse.ClickButton._ClickButton("//button[@class='k-button-icontext k-button k-primary']");
@@ -91,7 +91,7 @@ namespace CAM
             autoIt.Send("{TAB}");
 
             // Owner Branch/ Unit
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             addingCourse.ClickButton._ClickButton("//provider-info-tab//div[2]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
             autoIt.Send("Branch 37");
             autoIt.Send("{TAB}");
