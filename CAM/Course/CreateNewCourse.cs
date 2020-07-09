@@ -54,17 +54,14 @@ namespace CAM
             // Title
             //addingCourse.ClickButton._ClickButton("//input[@class='form-control ng-pristine ng-invalid ng-star-inserted ng-touched']");
             addingCourse.EnterTextBox.EnterTexts("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[1]/basic-info-tab/form/div/div[2]/editable/input", "Basketball 01");
-            //autoIt.Send("Basketball 01");
 
             // Type
             addingCourse.EnterTextBox.EnterTexts("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[1]/basic-info-tab/form/div/div[3]/editable/opal-select/ng-select/div/div/div[2]/input", "Course/ Workshop");
             addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[1]/basic-info-tab/form/div/div[3]/editable/opal-select/ng-select/ng-dropdown-panel/div/div[2]/div/div/span");
-            //autoIt.Send("{ENTER}");
-
+            Thread.Sleep(1000);
 
             // Duration (Hours)
             addingCourse.EnterTextBox.EnterTexts("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[1]/basic-info-tab/form/div/div[4]/div[1]/editable/kendo-numerictextbox/span/input", "10");
-            //autoIt.Send("10");
 
             // Duration (Minutes)
             addingCourse.EnterTextBox.EnterTexts("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[1]/basic-info-tab/form/div/div[4]/div[2]/editable/kendo-numerictextbox/span/input", "10");
@@ -74,16 +71,13 @@ namespace CAM
             addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[1]/basic-info-tab/form/div/div[5]/editable/opal-select/ng-select/ng-dropdown-panel/div/div[2]/div/div");
 
             // Mode of Learner
-            autoIt.Send("E-Learning");
-            autoIt.Send("{ENTER}, {TAB}");
+            addingCourse.EnterTextBox.EnterTexts("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[1]/basic-info-tab/form/div/div[6]/editable/opal-select/ng-select/div/div/div[2]/input", "E-Learning");
+            addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[1]/basic-info-tab/form/div/div[6]/editable/opal-select/ng-select/ng-dropdown-panel/div/div[2]/div/div");
 
-            // Traisi Course Code (Where applicable)
-            autoIt.Send("0F001");
-            addingCourse.ClickButton._CheckSpinner();
 
             // Objective/ Outcome of PD Activity 
-            addingCourse.ClickButton._ClickButton("//div[10]//editable[1]//textarea[1]");
-            autoIt.Send("Testing1");
+            addingCourse.EnterTextBox.EnterTexts("//div[10]//editable[1]//textarea[1]", "Testing1");
+            Thread.Sleep(1000);
 
             //  Course Synopsis/ Description 
             addingCourse.EnterTextBox.EnterTexts("//div[11]//editable[1]//textarea[1]", "Testing2");
@@ -91,14 +85,13 @@ namespace CAM
             ////--Provider--
 
             //  Training Agency 
-            autoIt.Send("{TAB}");
-            autoIt.Send("{SPACE}");// MOE
+            addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[2]/provider-info-tab/form/div/div[1]/editable/div[1]/div/input"); // MOE
 
             // Owner Division/ Academy
             addingCourse.ClickButton._ClickButton("//provider-info-tab//div//div[1]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
             autoIt.Send("Division 37");
             autoIt.Send("{TAB}");
-
+            
             // Owner Branch/ Unit
             Thread.Sleep(2000);
             addingCourse.ClickButton._ClickButton("//provider-info-tab//div[2]//editable[1]//opal-select[1]//ng-select[1]//div[1]//div[1]//div[2]//input[1]");
@@ -281,6 +274,9 @@ namespace CAM
             autoIt.Send("urek-cf-01");
             autoIt.Send("{TAB}");
 
+
+            // Traisi Course Code (Where applicable)
+            addingCourse.EnterTextBox.EnterTexts("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[1]/basic-info-tab/form/div/div[8]/editable/input", "tf001a");
 
 
             //Thumbnail

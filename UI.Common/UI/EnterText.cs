@@ -2,6 +2,8 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Interactions;
+using System.Windows.Forms;
 
 namespace UI.Common.UI
 
@@ -20,9 +22,10 @@ namespace UI.Common.UI
         public void EnterTexts(string XPath, string text)
         { 
             var option = driver.FindElement(By.XPath($"{XPath}"));
+            Clipboard.SetText(text);
             if (option != null)
             {
-                option.SendKeys(text);
+                option.SendKeys(OpenQA.Selenium.Keys.LeftControl + 'v');
             }
             else
             {                
