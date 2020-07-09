@@ -82,5 +82,18 @@ namespace UI.Common.UI
             }
         }
 
+        public bool _checkElementExistedByXPath(string XPath)
+        {
+            try
+            {
+                var option = _driver.FindElement(By.XPath($"{XPath}"));
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }
