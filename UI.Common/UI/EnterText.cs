@@ -19,7 +19,7 @@ namespace UI.Common.UI
             this.v = v;
         }
 
-        public void EnterTexts(string XPath, string text)
+        public void PasteTexts(string XPath, string text)
         { 
             var option = driver.FindElement(By.XPath($"{XPath}"));
             Clipboard.SetText(text);
@@ -29,6 +29,19 @@ namespace UI.Common.UI
             }
             else
             {                
+                throw new Exception("not found Textbox Element");
+            }
+        }
+
+        public void EnterTexts(string XPath, string text)
+        {
+            var option = driver.FindElement(By.XPath($"{XPath}"));
+            if (option != null)
+            {
+                option.SendKeys(text);
+            }
+            else
+            {
                 throw new Exception("not found Textbox Element");
             }
         }
