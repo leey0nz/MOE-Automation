@@ -23,8 +23,8 @@ namespace CAM
             // Navigate URL
             driver.Navigate().GoToUrl("https://www.development.opal2.conexus.net/app/cam");
 
-            AutoItX3 autoIt = new AutoItX3();
-            autoIt.WinActivate("Open");
+            //AutoItX3 autoIt = new AutoItX3();
+            //autoIt.WinActivate("Open");
 
             // Login Page
             LoginPage.Login(driver);
