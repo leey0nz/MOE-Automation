@@ -33,9 +33,14 @@ namespace UI.Common.UI
             }
         }
 
-        public void EnterHotKeys(string tab)
+        public string GenerateName()
         {
-            throw new NotImplementedException();
+            return "Testing " + Guid.NewGuid().ToString("N").Substring(0, 16);
+        }
+
+        public string GenerateTraisiCode()
+        {
+            return Guid.NewGuid().ToString().Substring(0, 6);
         }
     }
 }
