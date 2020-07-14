@@ -27,7 +27,7 @@ namespace CAM
             //autoIt.WinActivate("Open");
 
             // Login Page
-            LoginPage.Login(driver);
+            LoginRoleSA.Login(driver);
 
             AddCourse addingCourse = new AddCourse(driver);
 
@@ -44,13 +44,28 @@ namespace CAM
                 addingCourse.ClickMenu.ClickTabMenu("//span[contains(text(),'Course Administration')]");
                 Thread.Sleep(2000);
 
+                for (int i = 0; i < 5; i++)
+                {
+                    // Pending Course Approval menu
+                    addingCourse.ClickButton._ClickButton("//div[contains(text(),'Pending Course Approval')]");
 
-                //for (int i = 0; i < 5; i++)
-                //{
-                    
-                //    // Check create course successful
-                //    addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-management-page/div/div/div[2]/div");
-                //}
+                    // Search Course
+                    addingCourse.EnterTextBox.PasteTexts("//input[@placeholder='Search in Course Administration']", "Basketball Testing ");
+
+                    // Choose course
+                    addingCourse.ClickButton._ClickButton("//p[@class='main-title ng-star-inserted']");
+                    Thread.Sleep(2000);
+
+                    // Approve button
+                    addingCourse.ClickButton._ClickButton("//button[contains(text(),'Approve')]");
+
+                    // Input Comment
+                    addingCourse.EnterTextBox.PasteTexts("//textarea[@placeholder='Please add comment ...']", "Agree");
+
+                    // Proceed button
+                    addingCourse.ClickButton._ClickButton("/html/body/app-root/kendo-dialog/div[2]/div/comment-dialog/div[3]/button[2]");
+
+                }
 
                 //driver.Quit();
             }

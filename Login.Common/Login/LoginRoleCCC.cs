@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace Login.Common.Login
 {
-    public class LoginPage
+    public class LoginRoleCCC
     {
         public static void Login(IWebDriver driver)
         {

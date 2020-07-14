@@ -27,7 +27,7 @@ namespace CAM
             //autoIt.WinActivate("Open");
 
             // Login Page
-            LoginPage.Login(driver);
+            LoginRoleCCC.Login(driver);
 
             AddCourse addingCourse = new AddCourse(driver);
             
@@ -193,9 +193,7 @@ namespace CAM
                     // Date & Time Publish Course
                     addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[6]/course-planning-tab/form/div/div[7]/editable/kendo-datepicker/span/span/span");
                     addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[6]/course-planning-tab/form/div/div[7]/editable/kendo-datepicker/span/span/span");
-                    addingCourse.EnterTextBox.EnterTexts("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[6]/course-planning-tab/form/div/div[7]/editable/kendo-datepicker/span/kendo-dateinput/span/input", "13072020");
-                    //addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[6]/course-planning-tab/form/div/div[7]/editable/kendo-datepicker/span/kendo-dateinput/span/input");
-                    //addingCourse.EnterTextBox.PasteTexts("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[6]/course-planning-tab/form/div/div[7]/editable/kendo-datepicker/span/kendo-dateinput/span/input", "13072020");
+                    addingCourse.EnterTextBox.EnterTexts("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[6]/course-planning-tab/form/div/div[7]/editable/kendo-datepicker/span/kendo-dateinput/span/input", "14072020");
 
 
                     // Start Date (Publish Course)
@@ -258,14 +256,19 @@ namespace CAM
                     //autoIt.Send("{ENTER}");
                     //addingCourse.ClickButton._ClickButton("//button[@class='k-button ng-star-inserted']");
 
-                    // Save button
-                    addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/app-toolbar-fragment/div/div[3]/toolbar-right/div/button[1]");
+                    //// Save button
+                    //addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/app-toolbar-fragment/div/div[3]/toolbar-right/div/button[1]");
+
+                    // Submit button
+                    addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/app-toolbar-fragment/div/div[3]/toolbar-right/div/button[2]");
+                    addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/app-toolbar-fragment/div/div[3]/toolbar-right/div/button[2]");
+
 
                     // Check create course successful
                     addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-management-page/div/div/div[2]/div");
                 }
-               
-                //driver.Quit();
+
+                driver.Quit();
             }
             catch (Exception e)
             {

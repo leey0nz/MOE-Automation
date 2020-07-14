@@ -13,8 +13,8 @@ namespace MOE_Reporting
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            //CreateNewCourse course = new CreateNewCourse();
-            //course.createNewCourse();
+            CreateNewCourse course = new CreateNewCourse();
+            course.createNewCourse();
 
             ActionApprove approve = new ActionApprove();
             approve.actionApprove();

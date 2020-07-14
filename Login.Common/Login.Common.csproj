@@ -75,7 +75,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login\LoginPage.cs" />
+    <Compile Include="Login\LoginRoleCCC.cs" />
+    <Compile Include="Login\LoginRoleSA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
