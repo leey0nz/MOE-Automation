@@ -44,7 +44,7 @@ namespace CAM
                 addingCourse.ClickMenu.ClickTabMenu("//span[contains(text(),'Course Administration')]");
                 Thread.Sleep(2000);
 
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 2; i++)
                 {
                     // Create Course btn
                     addingCourse.ClickButton._ClickButton("//button[@class='k-button-icontext k-button k-primary']");
@@ -249,7 +249,6 @@ namespace CAM
                     // Traisi Course Code (Where applicable)
                     addingCourse.EnterTextBox.PasteTexts("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/kendo-tabstrip/div/detail-content-fragment/div/div[2]/detail-content-right/div/div[1]/basic-info-tab/form/div/div[8]/editable/input", addingCourse.EnterTextBox.GenerateTraisiCode());
 
-
                     // Thumbnail
                     //addingCourse.ClickButton._ClickByFindElement("//div[@class='opal-file-uploader__drop-file-area column align-center-center -show']");
                     //autoIt.Send("C:\\Users\\tuan.trinh\\Downloads\\i.jpg");
@@ -259,8 +258,13 @@ namespace CAM
                     //// Save button
                     //addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/app-toolbar-fragment/div/div[3]/toolbar-right/div/button[1]");
 
+                    // Click to Draft content
+                    addingCourse.ClickButton._ClickButton("//html//body//app-root//app-shell//div//cam-outlet//div//div//div//cam-app//course-detail-page//div//div//app-toolbar-fragment//div//div//toolbar-right//div//div//status-indicator//div//span[contains(text(),'Draft')]");
+
+
                     // Submit button
                     addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/app-toolbar-fragment/div/div[3]/toolbar-right/div/button[2]");
+                    Thread.Sleep(3000);
                     addingCourse.ClickButton._ClickButton("/html/body/app-root/app-shell/div/cam-outlet/div/div/div/cam-app/course-detail-page/div/div/app-toolbar-fragment/div/div[3]/toolbar-right/div/button[2]");
 
 

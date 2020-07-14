@@ -44,7 +44,7 @@ namespace CAM
                 addingCourse.ClickMenu.ClickTabMenu("//span[contains(text(),'Course Administration')]");
                 Thread.Sleep(2000);
 
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 2; i++)
                 {
                     // Pending Course Approval menu
                     addingCourse.ClickButton._ClickButton("//div[contains(text(),'Pending Course Approval')]");
